@@ -54,7 +54,8 @@ async function start() {
     }
 
     if (!serverInstance) {
-      serverInstance = app.listen(config.port, () => {
+      // Añadimos '0.0.0.0' como segundo argumento
+      serverInstance = app.listen(config.port, '0.0.0.0', () => {
         console.log(`[Server] Servidor ejecutándose en puerto ${config.port}`);
         console.log(`[Server] Entorno: ${config.nodeEnv}`);
       });
